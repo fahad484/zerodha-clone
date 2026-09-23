@@ -37,8 +37,12 @@ app.use(cookieParser());
 app.use("/",AuthRoute);
 
 const PORT = process.env.PORT || 3002;
-// const URI=process.env.MONGO_URL;
-const URI = "mongodb://localhost:27017/zerodha";
+
+//mongodb url
+const URI=process.env.MONGO_URL;
+
+//local url
+// const URI = "mongodb://localhost:27017/zerodha";
 
 
 

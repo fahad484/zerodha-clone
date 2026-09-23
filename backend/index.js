@@ -17,6 +17,9 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser");
 
 const AuthRoute = require("./Routes/AuthRoute.js");
+const Holdings = require("./Routes/HoldingsRoute.js");
+const Positions =require("./Routes/PositionsRoute.js");
+const Orders =require("./Routes/OrdersRoute.js");
 
 
 const {Order} =require("./model/Orders.js");
@@ -35,6 +38,9 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use("/",AuthRoute);
+app.use("/",Holdings);
+app.use("/",Positions);
+app.use("/",Orders);
 
 const PORT = process.env.PORT || 3002;
 
@@ -55,69 +61,6 @@ async function main(){
     console.log("connected to db");
 }
 
-
-
-app.get("/allHoldings",async(req,res)=>{
-    const allHoldings = await Holding.find({});
-    res.json(allHoldings);
-});
-
-app.get("/allPositions",async(req,res)=>{
-    const allPositions = await Position.find({});
-    res.json(allPositions);
-});
-
-app.post("/newOrder",async(req,res)=>{
-    let {name ,qty , price ,mode} =req.body;
-
-    if(mode === "SELL"){
-        const holding = await Holding.findOne({name:name});
-        console.log(holding);
-        if(holding.qty>=qty){
-            let sellHolding= await Holding.findOneAndUpdate({name:name},{$inc:{qty:-qty}});
-            console.log(sellHolding);
-
-            const newOrder = new Order({
-              name: name,
-              qty: qty,
-              price: price,
-              mode: mode,
-            });
-            await newOrder.save();
-
-        }
-        if (!holding) {
-          return res.status(400).send("You don't own this stock");
-        }
-
-        if (holding.qty < qty) {
-          return res.status(400).send("Not enough shares");
-        }
-    }
-
-    const newOrder = new Order({
-        name:name,
-        qty:qty,
-        price:price,
-        mode:mode,
-    });
-    await newOrder.save();
- 
-    //adding order qty to holdings i.e mode->buy 
-    if(mode === "BUY"){  
-        let res= await Holding.findOneAndUpdate({name:name},{$inc:{qty:qty}});
-        console.log("buyed stock:",res);
-    }
-    
-  
-});
-
-
-
-app.get("/Orders",async(req,res)=>{
-    const allOrders = await Order.find({});
-    res.json(allOrders);
-});
 
 app.listen(PORT,()=>{
     console.log("app is listening at port 3002.");

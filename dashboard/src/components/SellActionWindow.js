@@ -13,7 +13,7 @@ const SellActionWindow = ({ uid }) => {
 
   const generalContext = useContext(GeneralContext);
   const handleSellClick = () => {
-    axios.post(`${process.env.BACKEND_API_URL}/newOrder`, {
+    axios.post(`${process.env.REACT_APP_BACKEND_API_URL}/newOrder`, {
       name: uid,
       qty: stockQuantity,
       price: stockPrice,

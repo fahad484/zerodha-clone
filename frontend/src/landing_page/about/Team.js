@@ -8,7 +8,7 @@ function Team() {
             </div>
             <div className='row mt-5'>
                <div className='col-5 '>
-                <img src="media/images/nithinkamath.jpg" style={{borderRadius:"50%",width:"65%",marginLeft:"30%"}}/>
+                <img src="/media/images/nithinkamath.jpg" style={{borderRadius:"50%",width:"65%",marginLeft:"30%"}}/>
                 <p className='fs-5 mt-3' style={{paddingLeft:"48%"}}>Nithin Kamath</p>
                 <p className='text-muted fs-6 ' style={{paddingLeft:"50%"}}>Founder, CEO</p>
                </div>

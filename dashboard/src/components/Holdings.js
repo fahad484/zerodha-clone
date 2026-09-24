@@ -11,7 +11,7 @@ const Holdings = () => {
   const {refreshHoldings} = useContext(GeneralContext);
 
   useEffect(() => {
-    axios.get(`${process.env.BACKEND_API_URL}/allHoldings`).then((res) => {
+    axios.get(`${process.env.REACT_APP_BACKEND_API_URL}/allHoldings`).then((res) => {
       // console.log(res.data);
       setAllHoldings(res.data);
     });

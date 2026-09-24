@@ -1,5 +1,5 @@
 const SignupForward = () =>{
-    window.location.href="http://localhost:3000/signup";
+    window.location.href=`${process.env.DASHBOARD_API_URL}/signup`;
 }
 
 export default SignupForward;

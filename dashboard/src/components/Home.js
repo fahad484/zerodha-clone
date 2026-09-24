@@ -26,7 +26,7 @@ const Home = () => {
                   return;
                 }
               const {data} = await axios.post(
-                  "http://localhost:3002/",
+                  `${process.env.BACKEND_API_URL}/`,
                   {},
                   { withCredentials:true},
               );

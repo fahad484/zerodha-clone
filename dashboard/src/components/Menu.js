@@ -26,7 +26,7 @@ const Menu = () => {
   const Logout = async()=>{
       try {
         await axios.post(
-          "http://localhost:3002/logout",
+          `${process.env.BACKEND_API_URL}/logout`,
            {},
            { withCredentials : true},
         );

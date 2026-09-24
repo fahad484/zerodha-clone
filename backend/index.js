@@ -29,7 +29,7 @@ const {Position} =require("./model/Positions.js");
 // app.use(cors());
 app.use(cors({
     origin: ["http://localhost:3000",
-     "http://localhost:3001"],
+     "http://localhost:3001",`${process.env.DASHBOARD_API_URL}`,`${process.env.FRONTEND_API_URL}`],
     credentials: true
 }));
 //old implementation is body-parser() and modern is express.json()

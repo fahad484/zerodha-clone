@@ -36,7 +36,7 @@ const Login = () => {
     const handleSubmit = async(e) =>{
         e.preventDefault();
         try {
-            const {data} = await axios.post("http://localhost:3002/login",
+            const {data} = await axios.post(`${process.env.BACKEND_API_URL}/login`,
                 {
                     ...inputValue,
                 },{

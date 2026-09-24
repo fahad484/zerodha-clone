@@ -1,0 +1,32 @@
+import React from 'react'
+
+function Stats() {
+    return ( 
+        <div className='container mt-5 p-5'>
+            <div className='row '>
+                <div className='col-6'>
+                    <h1 className='mb-5 fs-2'>Trust with confidence</h1>
+                    <h2 className='fs-4'>Customer-first always</h2>
+                    <p className='mb-4 text-muted'>That's why 1.3+ crore customer trust Zerodha with &#8377; 3.5+<br/>lakh crores worth of equity investments.</p>
+                    <h2 className='fs-4' >No spam or gimmicks</h2>
+                    <p className='mb-4 text-muted'>No gimmicks, spam, "gamification", or annoying push<br/>notifications.Hogh quality apps that you use at your pace, the <br/>way you like. </p>
+                    <h2 className='fs-4'>The Zerodha universe</h2>
+                    <p className='mb-4 text-muted'>Not just an app, but a whole ecosystem ,Our investments in<br/>30+ fitech startups offer you tailored services specific to <br/>your needs.</p>
+                    <h2 className='fs-4'>Do better with money</h2>
+                    <p className='mb-4 text-muted'>with initiatives like Nudge and kill Switch,we don't just<br/>facilitate transactions, but actively help you do better with<br/>your money.</p>
+                </div>
+                <div className='col-6'>
+                    <img src='/media/images/ecosystem.png' style={{width:"95%"}} className='mt-4'/>
+                    <div className='row text-center'>
+                        <div className='col-6' > <a href='#' style={{textDecoration:"none"}}>Explore our products&nbsp;&nbsp;<i class="fa-solid fa-arrow-right-long"></i></a></div>
+                        <div className='col-6' > <a href='#' style={{textDecoration:"none"}}>Try Kite<i class="fa-solid fa-arrow-right-long"></i></a></div>
+                    </div>
+                   
+                   
+                </div>
+            </div>
+        </div>
+     );
+}
+
+export default Stats;

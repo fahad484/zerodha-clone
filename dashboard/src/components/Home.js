@@ -57,7 +57,7 @@ const Home = () => {
     
         {username ? (
             <>
-                <TopBar />
+                <TopBar username={username}/>
                 <ToastContainer />
                 <Dashboard username={username}/>
 

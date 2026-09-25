@@ -5,7 +5,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 
-const Menu = () => {
+const Menu = ({username}) => {
   const navigate = useNavigate();
   const [cookies , removeCookie] = useCookies(["token"]);
   
@@ -112,7 +112,7 @@ const Menu = () => {
         </ul>
         <hr />
         <div className="profile" onClick={handleProfileClick}>
-          <div className="avatar">ZU</div>
+          <div className="avatar">{username.charAt(0).toUpperCase()}</div>
           <button className="username  btn-light" style={{backgroundColor:"#fff",border:"none"}} onClick={Logout}>Logout</button>
           
         </div>

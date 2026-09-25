@@ -48,7 +48,7 @@ const Login = () => {
             if(success){
                 handleSuccess(message);
                 setTimeout(()=>{
-                    navigate(`${process.env.REACT_APP_DASHBOARD_API_URL}/`);
+                  window.location.href = `${process.env.REACT_APP_DASHBOARD_API_URL}/`;
                 },1000);
             }else{
                 handleError(message);

@@ -51,7 +51,7 @@ const Signup = () => {
             if(success){
                 handleSuccess(message);
                 setTimeout(()=>{
-                    navigate("/");
+                    navigate(`${process.env.REACT_APP_DASHBOARD_API_URL}/`);
                 },1000);
             }else{
                 handleError(message);

@@ -49,6 +49,7 @@ const Login = () => {
                 handleSuccess(message);
                 setTimeout(()=>{
                   window.location.href = `${process.env.REACT_APP_DASHBOARD_API_URL}/`;
+                  console.log("Dashboard URL:", process.env.REACT_APP_DASHBOARD_API_URL);
                 },1000);
             }else{
                 handleError(message);

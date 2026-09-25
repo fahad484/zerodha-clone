@@ -22,9 +22,9 @@ const Positions =require("./Routes/PositionsRoute.js");
 const Orders =require("./Routes/OrdersRoute.js");
 
 
-const {Order} =require("./model/Orders.js");
-const {Holding} = require("./model/Holdings.js");
-const {Position} =require("./model/Positions.js");
+// const {Order} =require("./model/Orders.js");
+// const {Holding} = require("./model/Holdings.js");
+// const {Position} =require("./model/Positions.js");
 
 // app.use(cors());
 app.use(cors({

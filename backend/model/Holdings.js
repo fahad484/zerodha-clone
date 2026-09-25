@@ -4,4 +4,4 @@ const { HoldingsSchema } = require("../schemas/HoldingsSchema.js");
 
 const Holding = new model("Holding" , HoldingsSchema);
 
-module.exports = {Holding};
+module.exports = Holding;

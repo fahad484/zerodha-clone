@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 const Orders = () => {
+  console.log("ORDERS COMPONENT RENDERED");
   const [orders ,setOrders] = useState([]);
 
   useEffect(()=>{
       axios.get(`${process.env.REACT_APP_BACKEND_API_URL}/Orders`).then((res)=>{
+        console.log("Orders API response:", res.data);
         setOrders(res.data);
       })
   },[])
@@ -19,6 +21,7 @@ const Orders = () => {
           Get started
         </Link>
       </div>}
+
       <div className="order-table">
         <h3 className="title">Orders ({orders.length})</h3>
         <table>

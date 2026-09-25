@@ -4,4 +4,4 @@ const {PositionsSchema} =require("../schemas/PositionsSchema.js");
 
 const Position = new model("Position",PositionsSchema);
 
-module.exports = { Position };
+module.exports = Position;

@@ -23,9 +23,10 @@ module.exports.Signup = async(req,res,next)=>{
         // });
 
          res.cookie("token", token, {
-            httpOnly: false,
+            httpOnly: true,
             secure: true,
             sameSite: "none",
+            path: "/",
         });
         
        return res.status(201).json({message:"user signed in successfully",success : true ,user});
@@ -62,9 +63,10 @@ module.exports.Login =async(req,res,next)=>{
         // });
 
          res.cookie("token", token, {
-            httpOnly: false,
+            httpOnly: true,
             secure: true,
             sameSite: "none",
+            path: "/",
         });
         
 

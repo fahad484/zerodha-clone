@@ -9,7 +9,7 @@ import Home from "./components/Home.js";
         <Routes>
             <Route path="/login" element={<Login/>}/>
             <Route path="/signup" element={<Signup/>}/>
-            <Route path="/" element={<Home />} />
+            <Route path="/*" element={<Home />} />
         </Routes>
         
     </div>
